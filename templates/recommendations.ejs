@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Recommendations</title>
+</head>
+<body>
+    <h1 class="welcome">MusiRec</h1>
+
+    <h2 class="welcome">Hey <%= firstName %>! Get your song recommendations below.</h2>
+
+    <div class="container">
+        <h2>Enter a song and artist you like:</h2>
+        <form action="/recommendations" method="POST">
+            <input type="hidden" name="username" value="<%= username %>">
+            <input type="hidden" name="firstName" value="<%= firstName %>">
+
+            <input type="text" name="song" placeholder="Song name" required>
+            <input type="text" name="artist" placeholder="Artist name" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        <p class="message"><%= message || "" %></p>
+    </div>
+
+    <div class="playlist">
+        <form action="/playlist" method="GET">
+            <button type="submit">View Playlist</button>
+        </form>
+    </div>
+
+    <% if (recommendations && recommendations.length > 0) { %>
+        <div class="recommendations">
+            <h3>Recommendations for "<%= song %>" by "<%= artist %>":</h3>
+            <table class="recommendations">
+                <thead>
+                    <tr>
+                        <th>Similar Songs</th>
+                        <th>Add to Playlist</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% recommendations.forEach(rec => { %>
+                        <tr>
+                            <td class="recs"><%= rec.name %> by <%= rec.artist %></td>
+                            <td>
+                                <form action="/saveSong" method="POST">
+                                    <input type="hidden" name="username" value="<%= username %>">
+                                    <input type="hidden" name="firstName" value="<%= firstName %>">
+                                    <input type="hidden" name="song" value="<%= rec.name %>">
+                                    <input type="hidden" name="artist" value="<%= rec.artist %>">
+                                    <button type="submit">Save</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } %>
+
+    <div class="logout">
+        <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+</html>

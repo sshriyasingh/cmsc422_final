@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+    <title>Your Playlist</title>
+</head>
+<body>
+    <h1 class="welcome">MusiRec</h1>
+    <h2 class="welcome"><%= firstName %>'s Playlist</h2>
+    <% if (playlist.length > 0) { %>
+        <div class="playlist-container">
+            <h2>Your Saved Songs:</h2>
+            <table class="recommendations">
+                <thead>
+                    <tr>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% playlist.forEach(item => { %>
+                        <tr>
+                            <td class="recs"><%= item.song %></td>
+                            <td><%= item.artist %></td>
+                            <td>
+                                <form action="/playlist/removeSong" method="POST">
+                                    <input type="hidden" name="song" value="<%= item.song %>">
+                                    <input type="hidden" name="artist" value="<%= item.artist %>">
+                                    <button type="submit">Remove</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    <% } else { %>
+        <p class="message">You have no songs in your playlist yet.</p>
+    <% } %>
+
+    <div class="playlist">
+        <form action="/recommendations" method="GET">
+            <button type="submit">Back to Recommendations</button>
+        </form>
+    </div>
+
+    <div class="logout">
+        <form action="/logout" method="POST">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+    
+</body>
+</html>

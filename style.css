@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+body {
+    background-color: rgb(139, 57, 194);
+    margin: 0;
+    font-family: 'Limelight';
+    color: white;
+    font-size: 18px;
+}
+
+.container {
+    background-color: rgb(119, 39, 200);
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+.welcome {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form input {
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+}
+
+form button {
+    background-color: rgb(213, 108, 249);
+    padding: 10px;
+    border-radius: 5px;
+    width: 95%;
+    font-family: 'Limelight';
+    color: white;
+    border: none;
+    font-size: 18px;
+}
+
+.message {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.recommendations,
+.playlist-container {
+    background: rgb(166, 90, 192);
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recommendations {
+    width: 70%;
+    margin-top: 20px;
+}
+
+.recommendations th,
+.recommendations td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgb(180, 161, 187);
+}
+
+.recommendations th {
+    background-color: rgb(138, 68, 161);
+}
+
+.recommendations td {
+    background-color: rgb(152, 96, 171);
+}
+
+.recommendations td form button {
+    background-color: rgb(213, 108, 249);
+    border-radius: 5px;
+    border: none;
+    font-family: 'Limelight';
+    color: white;
+    font-size: 18px;
+}
+
+.playlist {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.playlist button {
+    background-color: rgb(213, 108, 249);
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-family: 'Limelight';
+    color: white;
+    border: none;
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+.logout {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.logout button {
+    background-color: rgb(213, 108, 249);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-family: 'Limelight';
+    color: white;
+}
+
