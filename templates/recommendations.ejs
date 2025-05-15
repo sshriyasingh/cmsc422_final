@@ -12,7 +12,7 @@
 
     <div class="container">
         <h2>Enter a song and artist you like:</h2>
-        <form action="/recommendations" method="POST">
+        <form action="/recommendations" method="POST" autocomplete="off">
             <input type="hidden" name="username" value="<%= username %>">
             <input type="hidden" name="firstName" value="<%= firstName %>">
 

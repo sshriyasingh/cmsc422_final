@@ -5,3 +5,4 @@ YouTube Video Link:
 APIs: LastFM (https://www.last.fm/api)
 Contact Email: ssingh5@terpmail.umd.edu
 Deployed App Link: https://musirec.onrender.com/?
+When ran locally: http://localhost:5001/
