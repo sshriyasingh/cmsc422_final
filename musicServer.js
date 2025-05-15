@@ -8,7 +8,7 @@ require("dotenv").config({
 });
 
 const app = express();
-const portNumber = process.env.PORT;
+const portNumber = process.env.PORT || 5001;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
